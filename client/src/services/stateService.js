@@ -25,5 +25,11 @@ export default {
         return axios.get(`/api/state/${stateName}`).then( response => {
             return response.data
         })
+    },
+    getStateFact(stateName) {
+        return axios.get(`https://state-facts.herokuapp.com/api/fact/${stateName}`)
+        .then( response => {
+            return response.data
+        })
     }
 }

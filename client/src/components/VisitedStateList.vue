@@ -1,16 +1,13 @@
 <template>
   <div>
     <h3>List of states you have visited:</h3>
-    <div class="state-list-container">
+    <div class="">
       <div
-        class="state-container"
+        class=""
         v-for="state in this.states"
         v-bind:key="state.name"
       >
-        <state-detail
-          v-bind:state="state"
-          v-on:update-visited="updateVisited"
-        ></state-detail>
+        <h4>{{ state.name }}</h4>
       </div>
     </div>
   </div>
