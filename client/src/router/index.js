@@ -3,6 +3,7 @@ import StateList from '@/components/StateList'
 import AboutSite from '@/components/AboutSite'
 import StateMap from '@/components/StateMap'
 import VisitedStateList from '@/components/VisitedStateList'
+import NotFound from '@/components/NotFound'
 
 export default createRouter({
     history: createWebHashHistory(),
@@ -26,6 +27,11 @@ export default createRouter({
             path: '/visited',
             name: 'VisitedStateList',
             component: VisitedStateList
+        },
+        { //Magic 404 message
+            path: '/:pathMatch(.*)*', // Magic url is magic, matches everything
+            name: 'NotFound',
+            component: NotFound
         }
     ]
 })

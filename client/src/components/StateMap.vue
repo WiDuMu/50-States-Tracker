@@ -70,7 +70,8 @@ export default {
         .catch((err) => {
           if (err.response && err.response.status === 404) {
             // If state not found
-            this.state.name = `${this.state.name} is not a state`;
+            this.state.name = `${this.state.name} is not a state`; // old way, shouldn't be seen
+            this.$router.push({ name: 'NotFound' })
           } else {
             alert("Error retrieving data for this state");
             console.error(err);
