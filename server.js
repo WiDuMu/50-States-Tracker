@@ -6,7 +6,7 @@ let app = express()
 
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname, 'client', 'dist')))
+app.use(express.static(path.join(__dirname, 'client', 'dist'))) // Cross-platform path
 
 app.use('/api', states_api)
 

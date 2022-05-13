@@ -1,19 +1,19 @@
 import axios from 'axios'
 
 export default {
-    getAllStates() {
+    getAllStates() { // get all states
         return axios.get('/api/states').then( response => {
             return response.data
         })
     },
 
-    getVisited() {
+    getVisited() { // Get a list of states visited
         return axios.get('/api/states/visited').then( response => {
             return response.data
         })
     },
 
-    setVisited(stateName, visited) {
+    setVisited(stateName, visited) { // Change a state
         //Updates a state in a database
         let requestData = { visited: visited }
         console.log(stateName)
@@ -21,12 +21,12 @@ export default {
             return response.data
         })
     },
-    getOneState(stateName) {
+    getOneState(stateName) { // Get one state
         return axios.get(`/api/state/${stateName}`).then( response => {
             return response.data
         })
     },
-    getStateFact(stateName) {
+    getStateFact(stateName) { // Get a fun fact about a state
         return axios.get(`https://state-facts.herokuapp.com/api/fact/${stateName}`)
         .then( response => {
             return response.data

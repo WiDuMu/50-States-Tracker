@@ -3,7 +3,7 @@ let states = require('../models').States
 
 let router = express.Router()
 
-router.get('/states', function(req, res, next) {
+router.get('/states', function(req, res, next) { // get all states
     states.findAll({ order: ['name']}).then( states => {
         return res.json(states)
     })
@@ -17,7 +17,7 @@ router.get('/states/visited', function(req, res, next) { // get states that have
     .catch( err => next(err) )
 })
 
-router.get('/state/:name', function(req, res, name) {
+router.get('/state/:name', function(req, res, name) { // get one state
     let stateName = req.params.name
     states.findOne( {where: { name: stateName }})
         .then( state => {
@@ -30,7 +30,7 @@ router.get('/state/:name', function(req, res, name) {
         .catch( err => next(err) )
 })
 
-router.patch('/states/:name', function(req, res, next) {
+router.patch('/states/:name', function(req, res, next) { // change a state
     let stateName = req.params.name
     let stateVisited = req.body.visited
 

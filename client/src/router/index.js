@@ -6,7 +6,7 @@ import VisitedStateList from '@/components/VisitedStateList'
 
 export default createRouter({
     history: createWebHashHistory(),
-    routes: [
+    routes: [ // URL extensions that are allowed
         {
             path: '/',
             name: 'StateList',
