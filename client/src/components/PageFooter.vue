@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="links">
         <span class="p-3"><router-link to="/">Home</router-link></span>
-
+        <span class="p-3"><router-link to="/visited">See visited states</router-link></span>
         <span class="p-3"><router-link to="/about">About site</router-link></span>
         </div>
         <p>Header image credit: <a href="https://unsplash.com/photos/6V2vCZ2hYtY"> REVOLT on Unsplash </a></p>

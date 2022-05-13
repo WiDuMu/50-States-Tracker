@@ -10,6 +10,13 @@ router.get('/states', function(req, res, next) {
     .catch( err => next(err) )
 })
 
+router.get('/states/visited', function(req, res, next) { // get states that have been visited
+    states.findAll({where: {visited: true}, order: ['name']}).then( states => {
+        return res.json(states)
+    })
+    .catch( err => next(err) )
+})
+
 router.get('/state/:name', function(req, res, name) {
     let stateName = req.params.name
     states.findOne( {where: { name: stateName }})

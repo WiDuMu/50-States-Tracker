@@ -7,6 +7,12 @@ export default {
         })
     },
 
+    getVisited() {
+        return axios.get('/api/states/visited').then( response => {
+            return response.data
+        })
+    },
+
     setVisited(stateName, visited) {
         //Updates a state in a database
         let requestData = { visited: visited }

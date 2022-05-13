@@ -1,7 +1,7 @@
 <template>
     <div v-if="states.length > 0">
-        <h3>You have visited {{ totalVisited }} {{ units }}</h3>
-        <h3 id="all-visited-message" v-if="areAllVisited">You have visited all of them!</h3>
+        <h3 v-if="!areAllVisited">You have visited {{ totalVisited }} {{ units }}</h3>
+        <h3 id="all-visited-message" v-else>You have visited all of the states!</h3>
     </div>
 </template>
 
